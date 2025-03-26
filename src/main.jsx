@@ -9,16 +9,22 @@ import Contact from './pages/Contact'
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<Home/>
-  },
-  {
-    path:'/contact',
-    element:<Contact/>
-  },
-  {
-    path:'/about',
-    element:<About/>
+    path: '/',
+    element:<App/>, // Follows App Layout/Template
+    children:[
+      {
+        path:'',
+        element:<Home/>
+      },
+      {
+        path:'/contact',
+        element:<Contact/>
+      },
+      {
+        path:'/about',
+        element:<About/>
+      }
+    ]
   }
 ])
 
