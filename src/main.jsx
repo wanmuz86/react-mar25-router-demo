@@ -11,6 +11,7 @@ import Product, {productLoader} from './pages/Product'
 import ErrorPage from './pages/ErrorPage'
 import ProductErrorPage from './pages/ProductErrorPage.jsx'
 import AddProduct,{createProduct} from './pages/AddProduct.jsx'
+import ProtectedRoute from './pages/ProtectedRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -42,10 +43,17 @@ const router = createBrowserRouter([
         loader:productLoader
       },
       {
-        path:'/add-product',
-        element:<AddProduct/>,
-        action:createProduct
-      }
+        // Protected page needs to be logged in to access
+        element:<ProtectedRoute/>,
+        children:[
+          {
+            path:'/add-product',
+            element:<AddProduct/>,
+            action:createProduct
+          }
+        ]
+      },
+      
     ]
   }
 ])
