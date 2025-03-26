@@ -10,6 +10,7 @@ import ProductList,{loaders} from './pages/ProductList' // {}-> import the named
 import Product, {productLoader} from './pages/Product' 
 import ErrorPage from './pages/ErrorPage'
 import ProductErrorPage from './pages/ProductErrorPage.jsx'
+import AddProduct from './pages/AddProduct.jsx'
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         element:<Product/>,
         errorElement:<ProductErrorPage/>,
         loader:productLoader
+      },
+      {
+        path:'/add-product',
+        element:<AddProduct/>
       }
     ]
   }

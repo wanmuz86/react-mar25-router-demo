@@ -3,7 +3,8 @@ import {useParams,useNavigate, useLoaderData,useNavigation} from 'react-router-d
 import axios from 'axios'
 
 export const productLoader = async ({params}) => {
-    const response = await axios.get(`https://www.dummyjson.com/products/${params.productId}`)
+    const response = await 
+    axios.get(`https://www.dummyjson.com/products/${params.productId}`)
     return response.data
 }
 
