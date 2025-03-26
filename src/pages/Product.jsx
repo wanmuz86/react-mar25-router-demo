@@ -5,7 +5,9 @@ const Product = () => {
     
     // Object destructuring
     const {productId} = useParams()
-
+    if (productId > 194){
+        throw new Error('Product not found')
+    }
   return (
     <div>Product Page for id {productId} </div>
   )

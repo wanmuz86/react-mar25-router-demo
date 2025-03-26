@@ -8,11 +8,14 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import ProductList from './pages/ProductList'
 import Product from './pages/Product' 
+import ErrorPage from './pages/ErrorPage'
+import ProductErrorPage from './pages/ProductErrorPage.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element:<App/>, // Follows App Layout/Template
+    errorElement:<ErrorPage/>,
     children:[
       {
         path:'',
@@ -32,7 +35,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/products/:productId',
-        element:<Product/>
+        element:<Product/>,
+        errorElement:<ProductErrorPage/>
       }
     ]
   }
